@@ -10,7 +10,7 @@ to the cloud and store in the cloud.  Each area of significance in an indoor spa
 designated as a "zon" in indoo.rs terminology, and each user may have a last known "zone" 
 associated with it in the cloud.  This functionality is currently implemented by the app in 
 Android only, but an iOS version will be required in the future.  To implement this functionality
-in React Native, a bridge approach (bridge between React and native Android or iOS) code needs 
+in React Native, a bridge approach (bridge between React and native Android or iOS code) needs 
 to be built because there is no Javascript SDK for indoo.rs.  Only Android and iOS SDKs are 
 provided by indoo.rs.  The app implements this function in the package com.sharpsec.fmw.location.indoors.
 
