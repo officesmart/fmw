@@ -12,14 +12,18 @@ associated with it in the cloud.  This functionality is currently implemented by
 Android only, but an iOS version will be required in the future.  To implement this functionality
 in React Native, a bridge approach (bridge between React and native Android or iOS) code needs 
 to be built because there is no Javascript SDK for indoo.rs.  Only Android and iOS SDKs are 
-provided by indoo.rs.
+provided by indoo.rs.  The app implements this function in the package com.sharpsec.fmw.location.indoors.
 
 2.  Display the list of users being tracked and their locations.  The app implements this by 
 making a number of API calls to the back-end code to retrieve the list of users and their 
 locations from the cloud.
 
 The initial conversion effort will focus on implementing function #2.  Function #1 will require 
-developers to have access to the indoo.rs beacons.
+developers to have access to the indoo.rs beacons.  The folder FmwLocator-ReactNative contains
+some skeleton React Native code that can be used as the starting point for converting the 
+Android app to React Native or can be used as a guide if the developer chooses to start 
+from a clean slate.  The React Native code authenticates the user with AWS Cognito, but the 
+remaining functions are missing.
 
 
 
