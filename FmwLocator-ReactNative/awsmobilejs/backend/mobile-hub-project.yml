@@ -1,0 +1,29 @@
+--- !com.amazonaws.mobilehub.v0.Project 
+apps:
+  android: !com.amazonaws.mobilehub.v0.AppDO {}
+  react-native: !com.amazonaws.mobilehub.v0.AppDO {}
+features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      fmw-location: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-1:965499863168:lc5hu0ls70'
+          name: fmw-location
+          sdk-generation-stage-name: Stage
+        paths:
+          /fmw-location: !com.amazonaws.mobilehub.v0.Function {}
+          /fmwuserlocations: !com.amazonaws.mobilehub.v0.Function {}
+          '/fmwuserlocations/{user}': !com.amazonaws.mobilehub.v0.Function {}
+  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
+    components:
+      analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn 
+    attributes:
+      enabled: true
+      optional-sign-in: true
+    components:
+      sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider 
+        attributes:
+          user-pool-id: us-east-1_pr6SzkJ77
+name: fmwMobileHubProject
+region: us-east-1
