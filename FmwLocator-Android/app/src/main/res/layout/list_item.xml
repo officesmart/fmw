@@ -1,0 +1,9 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:text="@+id/label"
+    android:fontFamily="monospace"
+    android:textSize="16sp"
+    android:textStyle="bold" />

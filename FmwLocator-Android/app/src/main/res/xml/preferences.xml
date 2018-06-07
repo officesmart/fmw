@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:title="Server URL"
+        android:key="server_url"
+        android:summary="Provide server location in network..." />
+    <EditTextPreference
+        android:title="Indoors API KEY"
+        android:key="indoors_api_key"
+        android:summary="Provide 'Indoors' API KEY..." />
+</PreferenceScreen>
