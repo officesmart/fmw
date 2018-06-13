@@ -24,3 +24,7 @@ some skeleton React Native code that can be used as the starting point for conve
 Android app to React Native or can be used as a guide if the developer chooses to start 
 from a clean slate.  The React Native code authenticates the user with AWS Cognito, but the 
 remaining functions are missing.  The React Native code must work on both Android and iOS devices.
+
+The file FmwLocatorAction contains a video of the app functions after the user logs in.
+The file FmwLocatorLogin is a screenshot of the login screen the user is presented with 
+when the app starts up.
