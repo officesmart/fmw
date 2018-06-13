@@ -19,7 +19,7 @@ import java.util.*;
 
 
 
-@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://wfrj8o1tq5.execute-api.us-east-1.amazonaws.com/Integration")
+@com.amazonaws.mobileconnectors.apigateway.annotation.Service(endpoint = "https://wfrj8o1tq5.execute-api.us-east-1.amazonaws.com/Stage")
 public interface MobileApiClient {
 
 
@@ -29,30 +29,29 @@ public interface MobileApiClient {
      * @return ApiResponse
      */
     com.amazonaws.mobileconnectors.apigateway.ApiResponse execute(com.amazonaws.mobileconnectors.apigateway.ApiRequest request);
-    
-    /**
-     * 
-     * 
-     * @return void
-     */
-    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/fmwapi/locations", method = "GET")
-    void fmwapiLocationsGet();
-    
-    /**
-     * 
-     * 
-     * @return void
-     */
-    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/fmwapi/locations", method = "POST")
-    void fmwapiLocationsPost();
-    
-    /**
-     * 
-     * 
-     * @return void
-     */
-    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/fmwapi/locations/{user}", method = "GET")
-    void fmwapiLocationsUserGet();
-    
-}
 
+    /**
+     *
+     *
+     * @return void
+     */
+    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/api/locations", method = "GET")
+    void apiLocationsGet();
+
+    /**
+     *
+     *
+     * @return void
+     */
+    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/api/locations", method = "POST")
+    void apiLocationsPost();
+
+    /**
+     *
+     *
+     * @return void
+     */
+    @com.amazonaws.mobileconnectors.apigateway.annotation.Operation(path = "/api/locations/{user}", method = "GET")
+    void apiLocationsUserGet();
+
+}

@@ -20,6 +20,19 @@
       "Region": "us-east-1"
     }
   },
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "fmwmobilehubproject-userfiles-mobilehub-403904086",
+      "Region": "us-east-1"
+    }
+  },
+  "ContentManager": {
+    "Default": {
+      "Bucket": "fmwmobilehubproject-hosting-mobilehub-403904086",
+      "Region": "us-east-1",
+      "CloudFrontURL": "https://d2dzmbmqi2pytc.cloudfront.net"
+    }
+  },
   "PinpointAnalytics": {
     "Default": {
       "AppId": "b6c888341db048cebbbdfc4e11485ec3",
@@ -28,6 +41,12 @@
   },
   "PinpointTargeting": {
     "Default": {
+      "Region": "us-east-1"
+    }
+  },
+  "UserFileManager": {
+    "Default": {
+      "Bucket": "fmwmobilehubproject-userfiles-mobilehub-403904086",
       "Region": "us-east-1"
     }
   }

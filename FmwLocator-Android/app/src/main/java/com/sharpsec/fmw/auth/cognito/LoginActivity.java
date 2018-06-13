@@ -36,51 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }).execute();
 
-        // Add a call to initialize AWSMobileClient
-//        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
-//            @Override
-//            public void onComplete(AWSStartupResult awsStartupResult) {
-//                // Obtain the reference to the AWSCredentialsProvider and AWSConfiguration objects
-//
-//                // Use IdentityManager#getUserID to fetch the identity id.
-//                IdentityManager.getDefaultIdentityManager().getUserID(new IdentityHandler() {
-//                    @Override
-//                    public void onIdentityId(String identityId) {
-//                        Log.d(tag, "Identity ID = " + identityId);
-//
-//                        // Use IdentityManager#getCachedUserID to
-//                        //  fetch the locally cached identity id.
-//                        final String cachedIdentityId =
-//                                IdentityManager.getDefaultIdentityManager().getCachedUserID();
-//                    }
-//
-//                    @Override
-//                    public void handleError(Exception exception) {
-//                        Log.d(tag, "Error retrieving identity"+ exception);
-//                        final IdentityManager idm = IdentityManager.getDefaultIdentityManager();
-//                        // IdentityManager.setDefaultIdentityManager(idm);
-//                        // idm.signOut();
-//                        idm.getUnderlyingProvider().clearCredentials();
-//                        idm.getUnderlyingProvider().clear();
-//                        idm.getUnderlyingProvider().setLogins(null);
-//                    }
-//                });
-//                showSignIn();
-//                AuthUIConfiguration config =
-//                        new AuthUIConfiguration.Builder()
-//                                .userPools(true)  // true? show the Email and Password UI
-//                                .logoResId(R.drawable.follow_me_256x256) // Change the logo
-//                                .backgroundColor(Color.BLACK) // Change the backgroundColor
-//                                .isBackgroundColorFullScreen(true) // Full screen backgroundColor
-//                                .fontFamily("sans-serif-light") // sans-serif-light as global font
-//                                .canCancel(false)
-//                                .build();
-//                SignInUI signinUI = (SignInUI) AWSMobileClient.getInstance().
-//                        getClient(LoginActivity.this, SignInUI.class);
-//                signinUI.login(LoginActivity.this, FmwMainActivity.class).
-//                        authUIConfiguration(config).execute();
-//            }
-//        }).execute();
+
         // Sign-in listener
         IdentityManager.getDefaultIdentityManager().addSignInStateChangeListener(new SignInStateChangeListener() {
             @Override
@@ -96,8 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                 showSignIn();
             }
         });
-
-
 
     }
 

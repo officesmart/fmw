@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.amazonaws.mobile.auth.core.IdentityManager;
 import com.sharpsec.fmw.location.indoors.LocationEvent;
 import com.sharpsec.fmw.location.indoors.LocationService;
+import com.sharpsec.fmw.storage.DownloadSelectionActivity;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,7 @@ public class FmwMainActivity extends AppCompatActivity implements View.OnClickLi
     private static final int VIEW_DEBUG = 22222; // Random update preferences, user your own
     private static final int REQUEST_CODE_PERMISSIONS = 34168; // Random request code, use your own
     private static final int REQUEST_CODE_LOCATION = 58774; // Random request code, use your own
+    private static final int UPDATE_FILELIST = 33333; // Random update preferences, user your own
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,11 @@ public class FmwMainActivity extends AppCompatActivity implements View.OnClickLi
                 Intent debugIntent = new Intent(this, FmwDebugActivity.class);
                 startActivityForResult(debugIntent, VIEW_DEBUG);
                 return true;
+            case R.id.menuFiles:
+                // Go to DownloadSelection Activity
+                Intent filesIntent = new Intent(this, DownloadSelectionActivity.class);
+                startActivityForResult(filesIntent, UPDATE_FILELIST);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -90,6 +97,9 @@ public class FmwMainActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case VIEW_DEBUG:
                 // currently no process needed when returned from debug activity
+                break;
+            case UPDATE_FILELIST:
+                // currently no process needed when returned from file list activity
                 break;
             default:
                 break;

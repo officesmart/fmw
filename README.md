@@ -23,4 +23,4 @@ developers to have access to the indoo.rs beacons.  The folder FmwLocator-ReactN
 some skeleton React Native code that can be used as the starting point for converting the 
 Android app to React Native or can be used as a guide if the developer chooses to start 
 from a clean slate.  The React Native code authenticates the user with AWS Cognito, but the 
-remaining functions are missing.
+remaining functions are missing.  The React Native code must work on both Android and iOS devices.

@@ -7,8 +7,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".FmwApplication"
@@ -18,38 +19,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".auth.cognito.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".FmwMainActivity">
-        </activity>
-
+        <activity android:name=".FmwMainActivity"></activity>
         <activity
             android:name=".FmwPreferenceActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity
-            android:name=".FmwDebugActivity">
-        </activity>
-
-        <activity
-            android:name=".FmwFindCoworkerActivity">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".FmwDebugActivity"></activity>
+        <activity android:name=".FmwFindCoworkerActivity"></activity>
 
         <service
             android:name=".location.indoors.LocationService"
             android:exported="false" />
 
+        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
+
+        <activity android:name=".storage.DownloadSelectionActivity"></activity>
+
         <receiver
             android:name=".location.indoors.LocationStartupReceiver"
-            android:enabled="true" >
+            android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

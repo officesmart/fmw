@@ -6,6 +6,11 @@
         android:id="@+id/menuAbout"
         android:title="About"
         android:icon="@drawable/about"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/menuFiles"
+        android:title="MMyFiles"
+        android:icon="@drawable/about"
         app:showAsAction="always"
         android:orderInCategory="1"/>
 

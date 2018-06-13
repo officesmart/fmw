@@ -255,7 +255,7 @@ public class LocationService extends Service
     private void callCloudLogicFmwLocationApi(LocationEvent lEvent) {
         // Create components of api request
         final String method = "POST";
-        final String path = "/fmwapi/locations";
+        final String path = "/api/locations";
         //construct the POST body from LocationEvent and also form logged in user
         final String body = getJsonForPostBody(lEvent);
 

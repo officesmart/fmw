@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.auth.core.*;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobileconnectors.apigateway.ApiClientFactory;
 import com.amazonaws.mobileconnectors.apigateway.ApiRequest;
@@ -14,6 +15,7 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.StringUtils;
+import com.auth0.android.jwt.JWT;
 
 
 import org.json.JSONException;
@@ -29,7 +31,7 @@ public class MobileApiUtils {
     public static MobileApiClient createApiClient() {
         //create a client object
         MobileApiClient client = new ApiClientFactory()
-                .credentialsProvider(AWSMobileClient.getInstance().getCredentialsProvider())
+                //.credentialsProvider(AWSMobileClient.getInstance().getCredentialsProvider())
                 .build(MobileApiClient.class);
         return client;
     }
@@ -61,10 +63,10 @@ public class MobileApiUtils {
         parameters.put("lang", "en_US");
         //request headers
         final Map headers = new HashMap<>();
-        // IdentityProvider cp = IdentityManager.getDefaultIdentityManager().getCurrentIdentityProvider();
-        // String token = cp.getToken();
-        // JWT jwt = new JWT(token);
-        // headers.put("Authorization", "Bearer " + token);
+        IdentityProvider cp = IdentityManager.getDefaultIdentityManager().getCurrentIdentityProvider();
+         String token = cp.getToken();
+         JWT jwt = new JWT(token);
+         headers.put("Authorization", token);
         headers.put("Content-Type", "application/json");
 
         // Use components to create the api request

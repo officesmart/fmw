@@ -63,7 +63,7 @@ public class FmwFindCoworkerActivity extends AppCompatActivity implements Adapte
         super.onStart();
 
         final String method = "GET";
-        final String path = "/fmwapi/locations";
+        final String path = "/api/locations";
 
         UserListCallback listCallback = new UserListCallback();
         MobileApiUtils.makeApiCall(apiClient, method, path, null, listCallback);
@@ -74,7 +74,7 @@ public class FmwFindCoworkerActivity extends AppCompatActivity implements Adapte
         Log.d(LOG_TAG, userNames.get(position));
 
         final String method = "GET";
-        final String path = "/fmwapi/locations/" + userNames.get(position);
+        final String path = "/api/locations/" + userNames.get(position);
 
         UserCallback userCallback = new UserCallback();
         MobileApiUtils.makeApiCall(apiClient, method, path, null, userCallback);
